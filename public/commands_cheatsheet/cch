@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+CHEATSHEET_FILE_PATH="/mnt/c/Users/Abdshxre/Desktop/cheatsheets/bash-commands-cheatsheet.txt"
+
+
+
+main () {
+  ensure_dependency tldr
+  ensure_dependency column
+
+  if is_new_command "$1" ; then
+    # everything is cool, run this shit.
+    echo "${1}|$(tldr "$1" | head -n 4 | tail -n 1)" >> $CHEATSHEET_FILE_PATH
+    echo "${1}|$(tldr "$1" | head -n 4 | tail -n 1)"
+    exit 0
+
+  else
+    case $1 in
+      -l | --list )
+        total_number_of_lines=$(wc -l $CHEATSHEET_FILE_PATH | cut -d ' ' -f 1)
+        commands_start_line_number=$(grep -n -m 1  'COMMANDS' $CHEATSHEET_FILE_PATH | cut -d ":" -f 1)  # explanation: https://stackoverflow.com/a/47541176
+
+        tail -n $(( total_number_of_lines - commands_start_line_number )) $CHEATSHEET_FILE_PATH | cat -n | column -t -s '|'
+        exit 0
+      ;;
+
+      -t | --template )
+        #TODO: copy bash_script_template file and open the copy in the default editor
+        echo "🚧 this feature is under construction 🚧" >&2
+        exit 0
+      ;;
+
+      -h | --help )
+        echo -e "$usage"
+        exit 0
+      ;;
+
+      * )
+        echo -e "Invalid usage \nTry 'cch --help' for more information" >&2
+        # exit 1
+      ;;
+    esac
+  fi
+}
+
+
+
+
+is_new_command () {
+  # check if the command is empty/null.
+  if [[ -z "$1" ]]; then
+     echo "Command can't by empty" >&2
+     exit 1
+  fi
+
+ # check if it's a flag
+  if [[ $1 == -* ]]; then
+     return 1
+  fi
+
+  # check if the command is already in the cheatsheet.
+  if grep -q "${1}|" "$CHEATSHEET_FILE_PATH"; then
+     echo "This command is already in the cheatsheet:" >&2
+     echo "${1}|$(tldr "$1" | head -n 4 | tail -n 1)" | column -t -s '|'
+     exit  1
+  fi
+
+  # check if the command is in tldr's cache.
+  if [[ $(tldr -a -1 | grep -c "\b${1}\b") -eq 0 ]]; then
+     echo -e "This command either doesn't exist or was not found in tldr's list of cached commands.\n\nRun 'tldr --update' to update the cache." >&2
+     exit  1
+  fi
+
+}
+
+# is_new_command $1 && echo "shits a damn command"
+ensure_dependency () {
+  local tool=$1
+  if ! type "$tool" &> /dev/null; then
+    echo "Error: $tool is not installed"
+    echo "cch needs $tool to be installed in order to work."
+    echo "Please install it with:"
+    echo "sudo apt install $tool"
+    exit 1
+  fi
+}
+
+
+usage="
+  \e[4mcch\e[0m  -  ( \e[4mc\e[0mommands \e[4mch\e[0meatsheet )
+
+  Save and display shell commands you learn in a cheatsheet for future reference.
+  More information: https://example.com/cch.
+
+  - Save a shell command to commands cheatsheet:
+    cch \e[4mcommand\e[0m
+
+  - Display all shell commands in the commands cheatsheet:
+    cch -l|--list
+
+  - start writng a bash script using cch's bash_script_template:
+    cch -t|--template
+
+  - Display help for cch:
+    cch -h|--help
+  "
+
+
+main "$@"
+

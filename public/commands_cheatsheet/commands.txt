@@ -1,0 +1,44 @@
+ULTIMATE BASH SCRIPTING COURSE (only 30min long):
+https://www.youtube.com/watch?v=4ygaA_y1wvQ
+https://www.youtube.com/watch?v=IYZDIhfAUM0
+
+shell (e.g bash, zsh, fish ):
+-- is a program that lets you interface with the linux kernel.
+-- it is what does the work when you type a command in the terminal.
+
+Terminal ( also called command line and console ):
+-- is a program that lets you interface with the shell
+
+$PATH 
+-- it's an environment variable that's set in your shell that lets it know exactly which directories to search in whenever it's looking for a command.
+
+to add a script directory to the path run:
+export PATH=$PATH:(the directory path)
+this only adds it for the current shell session so make sure to add it to your ~/.bashrc or ~/.zshrc if you want it to persist.
+
+
+
+
+
+the saved commands will be diplayed after the next line.
+############### COMMANDS #################
+tldr|  Display simple help pages for command-line tools from the tldr-pages project.
+echo|  Print given arguments.
+cat|  Print and concatenate files.
+bat|  Print and concatenate files.
+jobs|  Shell builtin for viewing information about processes spawned by the current shell.
+fg|  Run jobs in foreground.
+bg|  Resume suspended jobs (e.g. using Ctrl + Z), and keeps them running in the background.
+disown|  Allow sub-processes to live beyond the shell that they are attached to.
+tail|  Display the last part of a file.
+head|  Output the first part of files.
+read|  Shell builtin for retrieving data from stdin.
+whatis|  Display one-line descriptions from manual pages.
+which|  Locate a program in the user's path.
+whoami|  Print the username associated with the current effective user ID.
+who|  Display who is logged in and related data (processes, boot time).
+compgen|  A built-in command for auto-completion in Bash, which is called on pressing TAB key twice.
+column|  Format stdin or a file into multiple columns.
+sed|  Edit text in a scriptable manner.
+cut|  Cut out fields from stdin or files.
+cal|  Display a calendar with the current day highlighted.
