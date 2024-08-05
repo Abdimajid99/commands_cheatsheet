@@ -1,8 +1,13 @@
 {
-   "builds": [
-     { "src": "public/*", "use": "@vercel/static" }
-   ],
-   "routes": [
-     { "src": "/(.*)", "dest": "/public/$1" }
-   ]
- }
+  "builds": [
+    { "src": "public/scripts/myscript.sh", "use": "@vercel/static" },
+    { "src": "public/commands_cheatsheet/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/install_cch", "dest": "/public/install_cch.sh" },
+    {
+      "src": "/commands_cheatsheet/(.*)",
+      "dest": "/public/commands_cheatsheet/$1"
+    }
+  ]
+}
