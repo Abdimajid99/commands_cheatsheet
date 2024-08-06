@@ -89,7 +89,7 @@ usage="
   \e[4mcch\e[0m  -  ( \e[4mc\e[0mommands \e[4mch\e[0meatsheet )
 
   Save and display shell commands you learn in a cheatsheet for future reference.
-  More information: https://example.com/cch.
+  More information: https://github.com/Abdimajid99/commands_cheatsheet.
 
   - Save a shell command to commands cheatsheet:
     cch \e[4mcommand\e[0m
