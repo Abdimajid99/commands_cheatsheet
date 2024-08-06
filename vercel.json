@@ -1,10 +1,10 @@
 {
   "builds": [
-    { "src": "public/install_cch.sh", "use": "@vercel/static" },
-    { "src": "public/commands_cheatsheet/**/*", "use": "@vercel/static" }
+    { "src": "install_cch.sh", "use": "@vercel/static" },
+    { "src": "commands_cheatsheet/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/install_cch", "dest": "/public/install_cch.sh" },
+    { "src": "/install_cch", "dest": "/install_cch.sh" },
     { "src": "/commands_cheatsheet/(.*)", "dest": "/commands_cheatsheet/$1" }
   ]
 }
