@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-echo "hello world"
-
 
 SCRIPT_NAME="cch"
 INSTALL_DIR="/usr/local/bin/commands_cheatsheet"
@@ -27,4 +25,5 @@ chmod +x $INSTALL_DIR/$SCRIPT_NAME
 #create a symlink in /usr/local/bin becuase it's in $PATH
 sudo ln -s $INSTALL_DIR/$SCRIPT_NAME /usr/local/bin/$SCRIPT_NAME
 
+# let the user know the install was successful.
 echo "$SCRIPT_NAME installed successfully in $INSTALL_DIR"
