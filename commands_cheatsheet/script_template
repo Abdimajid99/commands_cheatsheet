@@ -12,13 +12,12 @@ set -euo pipefail
 # set -o pipefail -- Exit on pipe fail
 
 # Make sure to use the main function convention if your script is complex enough to warrant it. ref: https://samanpavel.medium.com/bash-use-main-4a194dd00732
-
 # Use shellcheck to lint the script.
 # Use a shfmt to format the script.
 
 
-Bash scripting tutorials:
-https://www.youtube.com/watch?v=4ygaA_y1wvQ&t=1409s
-https://learnxinyminutes.com/docs/bash/
-https://tldp.org/LDP/abs/html/
-https://www.youtube.com/watch?v=IYZDIhfAUM0
+# Bash scripting tutorials:
+# https://www.youtube.com/watch?v=4ygaA_y1wvQ&t=1409s
+# https://learnxinyminutes.com/docs/bash/
+# https://tldp.org/LDP/abs/html/
+# https://www.youtube.com/watch?v=IYZDIhfAUM0

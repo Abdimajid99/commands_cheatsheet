@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-CHEATSHEET_FILE_PATH="/mnt/c/Users/Abdshxre/Desktop/cheatsheets/bash-commands-cheatsheet.txt"
-
+CHEATSHEET_FILE_PATH="/usr/local/bin/commands_cheatsheet/commands.txt"
 
 
 main () {
@@ -38,7 +37,7 @@ main () {
 
       * )
         echo -e "Invalid usage \nTry 'cch --help' for more information" >&2
-        # exit 1
+        exit 1
       ;;
     esac
   fi
@@ -74,7 +73,6 @@ is_new_command () {
 
 }
 
-# is_new_command $1 && echo "shits a damn command"
 ensure_dependency () {
   local tool=$1
   if ! type "$tool" &> /dev/null; then

@@ -1,6 +1,3 @@
-ULTIMATE BASH SCRIPTING COURSE (only 30min long):
-https://www.youtube.com/watch?v=4ygaA_y1wvQ
-https://www.youtube.com/watch?v=IYZDIhfAUM0
 
 shell (e.g bash, zsh, fish ):
 -- is a program that lets you interface with the linux kernel.
@@ -15,6 +12,10 @@ $PATH
 to add a script directory to the path run:
 export PATH=$PATH:(the directory path)
 this only adds it for the current shell session so make sure to add it to your ~/.bashrc or ~/.zshrc if you want it to persist.
+
+GREAT BASH SCRIPTING COURSE (only 30min long):
+https://www.youtube.com/watch?v=4ygaA_y1wvQ
+https://www.youtube.com/watch?v=IYZDIhfAUM0
 
 
 
