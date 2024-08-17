@@ -79,7 +79,7 @@ ensure_dependency () {
   if ! type "$tool" &> /dev/null; then
     echo "Error: '$tool' is not installed"
     echo "cch needs '$tool' to be installed in order to work."
-    echo "Please install it with: sudo apt install $( [[ "$tool" = "column" ]] && echo "bsdextrautils" || echo "$tool") "
+    echo "Please install it with: sudo apt install $( [[ "$tool" = "column" ]] && echo "sudo apt install bsdextrautils" || [[ "$tool" = "tldr" ]] && echo "npm install -g tldr") "
     exit 1
   fi
 }
