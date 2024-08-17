@@ -76,10 +76,9 @@ is_new_command () {
 ensure_dependency () {
   local tool=$1
   if ! type "$tool" &> /dev/null; then
-    echo "Error: $tool is not installed"
-    echo "cch needs $tool to be installed in order to work."
-    echo "Please install it with:"
-    echo "sudo apt install $tool"
+    echo "Error: '$tool' is not installed"
+    echo "cch needs '$tool' to be installed in order to work."
+    echo "Please install it with: sudo apt install $( [[ "$tool" = "column" ]] && echo "bsdextrautils" || echo "$tool") "
     exit 1
   fi
 }
