@@ -66,7 +66,7 @@ is_new_command () {
   fi
 
   # check if the command is in tldr's cache.
-  if [[ $(tldr -a -1 | grep -c "\b${1}\b") -eq 0 ]]; then
+  if [[ $(tldr -a -1 2> /dev/null | grep -c "\b${1}\b") -eq 0 ]]; then
      echo -e "This command either doesn't exist or was not found in tldr's list of cached commands.\n\nRun 'tldr --update' to update the cache." >&2
      exit  1
   fi
