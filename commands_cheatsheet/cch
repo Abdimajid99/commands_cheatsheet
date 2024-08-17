@@ -87,7 +87,7 @@ ensure_dependency () {
 usage="
   \e[4mcch\e[0m  -  ( \e[4mc\e[0mommands \e[4mch\e[0meatsheet )
 
-  Save and display shell commands you learn in a cheatsheet for future reference.
+  Save shell commands you learn in a cheatsheet so you don't forget them.
   More information: https://github.com/Abdimajid99/commands_cheatsheet.
 
   - Save a shell command to commands cheatsheet:
