@@ -21,6 +21,8 @@ sudo curl -o $INSTALL_DIR/script_template "$SCRIPT_URL"/script_template
 
 # Make the script executable
 sudo chmod +x $INSTALL_DIR/$SCRIPT_NAME
+# make commands.txt readable and writable.
+sudo chmod o+rw commands.txt "$SCRIPT_URL"/commands.txt
 
 #create a symlink in /usr/local/bin becuase it's in $PATH
 sudo ln -s $INSTALL_DIR/$SCRIPT_NAME /usr/local/bin/$SCRIPT_NAME
