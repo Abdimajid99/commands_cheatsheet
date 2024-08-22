@@ -45,6 +45,3 @@ while building this project, I learned many things including:
 - how to use [shellcheck](https://github.com/koalaman/shellcheck) to lint a bash script.
 - how to write a README file with markdown.
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
