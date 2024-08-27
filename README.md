@@ -34,8 +34,6 @@ curl https://commands-cheatsheet.vercel.app/install_cch | bash
 
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
 while building this project, I learned many things including:
 - many Linux commands (grep, sed, head, tail etc).
 - bash.
